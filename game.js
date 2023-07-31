@@ -4,4 +4,23 @@ function computerPlay(){
     let computerChoice = choices[randomChoice]
     return computerChoice;
 }
-console.log(computerPlay());
+function playRound(playerSelection, computerSelection){
+    let winner;
+    if (playerSelection.toLowerCase() == computerSelection){
+        winner = "tie"
+    } else {
+        
+    }
+    return winner;
+
+}
+let playerScore = 0;
+let computerScore = 0;
+function game(){
+
+}
+function start(){
+    console.log("Welcome to the game of Rock, Paper, Scissors! " +
+        "Let's see if you can defeat the computer!")
+    game();
+}
