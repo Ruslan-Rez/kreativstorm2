@@ -74,18 +74,28 @@ function game() {
     let scoredifference = computerScore - playerScore;
     console.log("YOU LOST BY" + scoredifference + "POINTS!!");
   }
+  confirmAction();
+}
+
+function confirmAction() {
+  let text = "Do you want to play another round?";
+  if (confirm(text) == true) {
+    start();
+  } else {
+    console.log("Cancelled!");
+  }
 }
 
 function start() {
-  game();
+  let gameInit = prompt("Type your input!");
+  input = gameInit.toLowerCase();
+  if (input == "rock" || input == "paper" || input == "scissors") {
+    game();
+  } else {
+    alert("Type any of the inputs from ROCK / PAPER / SCISSORS");
+  }
 }
-
 //Program starts from here//
 console.log("Welcome to the game of Rock, Paper, Scissors! " + "Let's see if you can defeat the computer!");
-let gameInit = prompt("Type your input!");
-input = gameInit.toLowerCase();
-if (input == "rock" || input == "paper" || input == "scissors") {
-  start();
-} else {
-  alert("Type any of the inputs from ROCK / PAPER / SCISSORS");
-}
+start();
+confirmAction();
