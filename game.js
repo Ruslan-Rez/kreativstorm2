@@ -89,10 +89,12 @@ function confirmAction() {
 function start() {
   let gameInit = prompt("Type your input!");
   input = gameInit.toLowerCase();
-  if (input == "rock" || input == "paper" || input == "scissors") {
-    game();
-  } else {
-    alert("Type any of the inputs from ROCK / PAPER / SCISSORS");
+  if (input) {
+    if (input == "rock" || input == "paper" || input == "scissors") {
+      game();
+    } else {
+      alert("Type any of the inputs from ROCK / PAPER / SCISSORS");
+    }
   }
 }
 //Program starts from here//
