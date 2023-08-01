@@ -70,9 +70,11 @@ function game() {
   if (playerScore > computerScore) {
     let scoredifference = playerScore - computerScore;
     console.log("YOU WON BY" + scoredifference + "POINTS!!");
-  } else {
+  } else if (computerScore > playerScore){
     let scoredifference = computerScore - playerScore;
     console.log("YOU LOST BY" + scoredifference + "POINTS!!");
+  }else {
+     console.log("It's a TIE!!");
   }
   confirmAction();
 }
