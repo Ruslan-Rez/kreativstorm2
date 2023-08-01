@@ -11,7 +11,7 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
   let message;
-  //let playerSelectionLowerCase = playerSelection.toLowerCase();
+   
   switch (playerSelection) {
     case "rock":
       if (computerSelection == "rock") {
