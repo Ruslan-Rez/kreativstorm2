@@ -64,17 +64,17 @@ function game() {
     console.log("Your score:" + playerScore);
     console.log("Computer score:" + computerScore);
   }
-  console.log("YOUR FINAL SCORE:" + playerScore);
-  console.log("COMPUTER'S FINAL SCORE:" + computerScore);
+  console.log("YOUR FINAL SCORE: " + playerScore);
+  console.log("COMPUTER'S FINAL SCORE: " + computerScore);
 
   if (playerScore > computerScore) {
     let scoredifference = playerScore - computerScore;
-    console.log("YOU WON BY" + scoredifference + "POINTS!!");
-  } else if (computerScore > playerScore){
+    console.log("YOU WON BY " + scoredifference + "POINTS!!");
+  } else if (computerScore > playerScore) {
     let scoredifference = computerScore - playerScore;
-    console.log("YOU LOST BY" + scoredifference + "POINTS!!");
-  }else {
-     console.log("It's a TIE!!");
+    console.log("YOU LOST BY " + scoredifference + "POINTS!!");
+  } else {
+    console.log("It's a TIE!!");
   }
   confirmAction();
 }
@@ -90,8 +90,8 @@ function confirmAction() {
 
 function start() {
   let gameInit = prompt("Type your input!");
-  input = gameInit.toLowerCase();
-  if (input) {
+  if (gameInit) {
+    input = gameInit.toLowerCase();
     if (input == "rock" || input == "paper" || input == "scissors") {
       game();
     } else {
@@ -101,4 +101,4 @@ function start() {
 }
 //Program starts from here//
 console.log("Welcome to the game of Rock, Paper, Scissors! " + "Let's see if you can defeat the computer!");
-start(); 
+start();
