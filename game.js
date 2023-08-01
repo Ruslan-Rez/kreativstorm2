@@ -93,11 +93,10 @@ function start() {
     if (input == "rock" || input == "paper" || input == "scissors") {
       game();
     } else {
-       console.log("Game Cancelled!");
+      alert("Type any of the inputs from ROCK / PAPER / SCISSORS");
     }
   }
 }
 //Program starts from here//
 console.log("Welcome to the game of Rock, Paper, Scissors! " + "Let's see if you can defeat the computer!");
-start();
-confirmAction();
+start(); 
