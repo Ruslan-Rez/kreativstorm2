@@ -93,7 +93,7 @@ function start() {
     if (input == "rock" || input == "paper" || input == "scissors") {
       game();
     } else {
-      alert("Type any of the inputs from ROCK / PAPER / SCISSORS");
+       console.log("Game Cancelled!");
     }
   }
 }
