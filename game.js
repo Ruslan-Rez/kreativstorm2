@@ -53,8 +53,6 @@ function playRound(playerSelection, computerSelection) {
         message = "Your Input: Scissors\n" + "Computer Selection: Scissors\n" + "Result:It's a tie! Both gave Scissors";
         return message;
       }
-    default:
-      return "Wrong INput!";
   }
 }
 
@@ -101,6 +99,7 @@ function start() {
       game();
     } else {
       alert("Type any of the inputs from ROCK / PAPER / SCISSORS");
+      start();
     }
   }
 }
