@@ -88,8 +88,13 @@ function confirmAction() {
   }
 }
 
+function reset() {
+  playerScore = 0;
+  computerScore = 0;
+}
 function start() {
   let gameInit = prompt("Type your input!");
+  reset();
   if (gameInit) {
     input = gameInit.toLowerCase();
     if (input == "rock" || input == "paper" || input == "scissors") {
