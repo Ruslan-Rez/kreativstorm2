@@ -82,7 +82,7 @@ function confirmAction() {
   if (confirm(text) == true) {
     start();
   } else {
-    console.log("Cancelled!");
+    alert("Cancelled!");
   }
 }
 
