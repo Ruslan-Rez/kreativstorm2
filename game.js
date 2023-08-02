@@ -84,7 +84,7 @@ function confirmAction() {
   if (confirm(text) == true) {
     start();
   } else {
-    console.log("\n\nGame Cancelled!");
+    console.log("\n\nNext round of game cancelled by user!");
     alert("You cancelled the game!");
   }
 }
