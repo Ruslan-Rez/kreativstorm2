@@ -62,7 +62,7 @@ function game() {
     console.log("Your score:" + playerScore);
     console.log("Computer score:" + computerScore);
   }
-  console.log("\n\n\nYOUR TOTAL SCORE :   " + playerScore+" POINTS");
+  console.log("\n\n\n\nYOUR TOTAL SCORE :   " + playerScore+" POINTS");
   console.log("COMPUTER'S TOTAL SCORE : " + computerScore+" POINTS");
 
   if (playerScore > computerScore) {
@@ -92,7 +92,7 @@ function reset() {
 }
 function start() {
   console.clear();
-  console.log("Welcome to the game of Rock, Paper, Scissors! \n" + "Let's see if you can defeat the computer!\n");
+  console.log("Welcome to the game of Rock, Paper, Scissors! \n" + "Let's see if you can defeat the computer!\n\n");
   let gameInit = prompt("Type your input!");
   reset();
   if (gameInit) {
