@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+let scoreDifference;
 let input;
 
 function computerPlay() {
@@ -67,10 +68,10 @@ function game() {
   console.log("COMPUTER'S TOTAL SCORE : " + computerScore + " POINTS");
 
   if (playerScore > computerScore) {
-    let scoreDifference = playerScore - computerScore;
+    scoreDifference = playerScore - computerScore;
     console.log("FINAL RESULT :   YOU WON BY " + scoreDifference + " POINTS!!");
   } else if (computerScore > playerScore) {
-    let scoreDifference = computerScore - playerScore;
+    scoreDifference = computerScore - playerScore;
     console.log("FINAL RESULT :   YOU LOST BY " + scoreDifference + " POINTS!!");
   } else {
     console.log("FINAL RESULT :   It's a TIE!!");
@@ -98,19 +99,23 @@ function start() {
   console.log("Welcome to the game of Rock, Paper, Scissors! \n" + "Let's see if you can defeat the computer!\n\n");
   let gameInit = prompt("Type any of the inputs from ROCK / PAPER / SCISSORS");
 
-  if (gameInit) { // Some value entered in the prompt box
+  if (gameInit) {
+    // Some value entered in prompt box
     input = gameInit.toLowerCase();
-    if (input == "rock" || input == "paper" || input == "scissors") { // Checking whether the value entered is either 'rock/paper/scissors' 
+    if (input == "rock" || input == "paper" || input == "scissors") {
+      // Checking whether the value entered is either 'rock/paper/scissors'
       reset(); //reset the computer score & player score
       game(); // STARTS THE GAME AFTER PASSING THE INITIAL CHECKS
     } else {
       alert("You can type only ROCK / PAPER / SCISSORS");
       start();
     }
-  } else if (gameInit === "") {// No value entered in prompt box & hit OK
+  } else if (gameInit === "") {
+    // No value entered in prompt box & hit OK
     alert("You didn't type anything!");
     start();
-  } else if (gameInit === null) {// Cancel button hit in the prompt box
+  } else if (gameInit === null) {
+    // Cancel button hit in the prompt box
     console.log("Game Cancelled!");
     alert("You cancelled the game!");
   }
