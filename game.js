@@ -101,7 +101,8 @@ function start() {
     // Some value entered in prompt box
     input = gameInit.toLowerCase();
     if (input == "rock" || input == "paper" || input == "scissors") {
-      reset();
+       // Checking whether either 'rock/paper/scissors' entered
+      reset(); //reset the computer score & player score
       game();
     } else {
       alert("You can type only ROCK / PAPER / SCISSORS");
@@ -112,7 +113,7 @@ function start() {
     alert("You didn't type anything!");
     start();
   } else if (gameInit === null) {
-    // Cancel button hit in prompt box
+    // Cancel button hit in the prompt box
     console.log("Game Cancelled!");
     alert("You cancelled the game!");
   }
