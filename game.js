@@ -61,7 +61,7 @@ function game() {
     let j = i + 1;
     console.log("\nRound " + j);
     console.log(playRound(input, computerPlay()));
-    console.log("Your score:" + playerScore + "                 |                 " + "Computer score:" + computerScore);
+    console.log("Your score:" + playerScore + "               |               " + "Computer score:" + computerScore);
   }
   console.log("\n\nYOUR TOTAL SCORE :   " + playerScore + " POINTS");
   console.log("COMPUTER'S TOTAL SCORE : " + computerScore + " POINTS");
@@ -95,15 +95,15 @@ function start() {
   console.clear();
   console.log("Welcome to the game of Rock, Paper, Scissors! \n" + "Let's see if you can defeat the computer!\n\n");
   let gameInit = prompt("Type your input!");
-  reset();
-  if (gameInit) {
-    input = gameInit.toLowerCase();
-    if (input == "rock" || input == "paper" || input == "scissors") {
-      game();
-    } else {
-      alert("Type any of the inputs from ROCK / PAPER / SCISSORS");
-      start();
-    }
+  input = gameInit.toLowerCase();
+
+  if (gameInit && (input == "rock" || input == "paper" || input == "scissors")) {
+    // if (input == "rock" || input == "paper" || input == "scissors") {
+    reset();
+    game();
+  } else {
+    alert("Type any of the inputs from ROCK / PAPER / SCISSORS");
+    start();
   }
 }
 //Program starts from here//
