@@ -92,7 +92,7 @@ function reset() {
 }
 function start() {
   console.clear();
-  console.log("Welcome to the game of Rock, Paper, Scissors! \n" + "Let's see if you can defeat the computer!");
+  console.log("Welcome to the game of Rock, Paper, Scissors! \n" + "Let's see if you can defeat the computer!\n");
   let gameInit = prompt("Type your input!");
   reset();
   if (gameInit) {
