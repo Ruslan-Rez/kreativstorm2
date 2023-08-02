@@ -1,4 +1,3 @@
- 
 let playerScore = 0;
 let computerScore = 0;
 let input = null;
@@ -62,7 +61,7 @@ function game() {
     let j = i + 1;
     console.log("\nRound " + j);
     console.log(playRound(input, computerPlay()));
-    console.log("Your score:" + playerScore + "                   |                   " + "Computer score:" + computerScore);
+    console.log("Your score:" + playerScore + "                 |                 " + "Computer score:" + computerScore);
   }
   console.log("\n\nYOUR TOTAL SCORE :   " + playerScore + " POINTS");
   console.log("COMPUTER'S TOTAL SCORE : " + computerScore + " POINTS");
