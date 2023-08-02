@@ -104,7 +104,7 @@ function start() {
     if (input == "rock" || input == "paper" || input == "scissors") {
        // Checking whether either 'rock/paper/scissors' entered
       reset(); //reset the computer score & player score
-      game();
+      game(); // STARTS THE GAME AFTER PASSING THE INITIAL CHECKS
     } else {
       alert("You can type only ROCK / PAPER / SCISSORS");
       start();
