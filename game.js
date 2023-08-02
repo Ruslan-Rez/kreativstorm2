@@ -15,27 +15,27 @@ function playRound(playerSelection, computerSelection) {
   switch (playerSelection) {
     case "rock":
       if (computerSelection == "rock") {
-        message = "Your Input: Rock\n" + "Computer Selection: Rock\n" + "Result:It's a tie! Both gave Rock";
+        message = "Your Selection: Rock\n" + "Computer Selection: Rock\n" + "Result:It's a tie! Both gave Rock";
         return message;
       } else if (computerSelection == "paper") {
-        message = "Your Input: Rock\n" + "Computer Selection: Paper\n" + "Result:You lose! Paper beats rock";
+        message = "Your Selection: Rock\n" + "Computer Selection: Paper\n" + "Result:You lose! Paper beats rock";
         computerScore += 1;
         return message;
       } else {
-        message = "Your Input: Rock\n" + "Computer Selection: Scissors\n" + "Result:You win! Rock beats scissors";
+        message = "Your Selection: Rock\n" + "Computer Selection: Scissors\n" + "Result:You win! Rock beats scissors";
         playerScore += 1;
         return message;
       }
     case "paper":
       if (computerSelection == "rock") {
         playerScore += 1;
-        message = "Your Input: Paper\n" + "Computer Selection: Rock\n" + "Result:You won! Paper beats Rock";
+        message = "Your Selection: Paper\n" + "omputer Selection: Rock\n" + "Result:You won! Paper beats Rock";
         return message;
       } else if (computerSelection == "paper") {
-        message = "Your Input: Paper\n" + "Computer Selection: Paper\n" + "Result:It's a tie! Both gave paper";
+        message = "Your Selection: Paper\n" + "Computer Selection: Paper\n" + "Result:It's a tie! Both gave paper";
         return message;
       } else {
-        message = "Your Input: Paper\n" + "Computer Selection: Scissors\n" + "Result:You lose! Scissors beats paper";
+        message = "Your Selection: Paper\n" + "Computer Selection: Scissors\n" + "Result:You lose! Scissors beats paper";
         computerScore += 1;
         return message;
       }
@@ -43,14 +43,14 @@ function playRound(playerSelection, computerSelection) {
     case "scissors":
       if (computerSelection == "rock") {
         computerScore += 1;
-        message = "Your Input: Scissors\n" + "Computer Selection: Rock\n" + "Result:You lose! Rock beats scissors";
+        message = "Your Selection: Scissors\n" + "Computer Selection: Rock\n" + "Result:You lose! Rock beats scissors";
         return message;
       } else if (computerSelection == "paper") {
         playerScore += 1;
-        message = "Your Input: Scissors\n" + "Computer Selection: Paper\n" + "Result:You Won! Scissors beats paper";
+        message = "Your Selection: Scissors\n" + "Computer Selection: Paper\n" + "Result:You Won! Scissors beats paper";
         return message;
       } else {
-        message = "Your Input: Scissors\n" + "Computer Selection: Scissors\n" + "Result:It's a tie! Both gave Scissors";
+        message = "Your Selection: Scissors\n" + "Computer Selection: Scissors\n" + "Result:It's a tie! Both gave Scissors";
         return message;
       }
   }
@@ -58,12 +58,13 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   for (let i = 0; i < 5; i++) {
+    let j = i + 1;
+    console.log("\nRound" + j);
     console.log(playRound(input, computerPlay()));
-    console.log("Your score:" + playerScore);
-    console.log("Computer score:" + computerScore);
+    console.log("Your score:" + playerScore + "               |               " + "Computer score:" + computerScore);
   }
-  console.log("\n\nYOUR TOTAL SCORE :   " + playerScore+" POINTS");
-  console.log("COMPUTER'S TOTAL SCORE : " + computerScore+" POINTS");
+  console.log("\n\nYOUR TOTAL SCORE :   " + playerScore + " POINTS");
+  console.log("COMPUTER'S TOTAL SCORE : " + computerScore + " POINTS");
 
   if (playerScore > computerScore) {
     let scoreDifference = playerScore - computerScore;
