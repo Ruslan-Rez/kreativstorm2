@@ -98,9 +98,9 @@ function start() {
   console.log("Welcome to the game of Rock, Paper, Scissors! \n" + "Let's see if you can defeat the computer!\n\n");
   let gameInit = prompt("Type any of the inputs from ROCK / PAPER / SCISSORS");
 
-  if (gameInit) { // Some value entered in prompt box
+  if (gameInit) { // Some value entered in the prompt box
     input = gameInit.toLowerCase();
-    if (input == "rock" || input == "paper" || input == "scissors") {// Checking whether the value entered is either 'rock/paper/scissors' 
+    if (input == "rock" || input == "paper" || input == "scissors") { // Checking whether the value entered is either 'rock/paper/scissors' 
       reset(); //reset the computer score & player score
       game(); // STARTS THE GAME AFTER PASSING THE INITIAL CHECKS
     } else {
