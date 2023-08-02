@@ -82,7 +82,7 @@ function confirmAction() {
   if (confirm(text) == true) {
     start();
   } else {
-    console.log("Game Cancelled!");
+    console.log("\n\nGame Cancelled!");
   }
 }
 
