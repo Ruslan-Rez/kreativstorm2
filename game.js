@@ -29,7 +29,7 @@ function playRound(playerSelection, computerSelection) {
     case "paper":
       if (computerSelection == "rock") {
         playerScore += 1;
-        message = "Your Selection: Paper\n" + "omputer Selection: Rock\n" + "Result:You won! Paper beats Rock";
+        message = "Your Selection: Paper\n" + "Computer Selection: Rock\n" + "Result:You won! Paper beats Rock";
         return message;
       } else if (computerSelection == "paper") {
         message = "Your Selection: Paper\n" + "Computer Selection: Paper\n" + "Result:It's a tie! Both gave paper";
