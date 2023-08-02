@@ -1,6 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
-let input = null;
+let input;
 
 function computerPlay() {
   const choices = ["rock", "paper", "scissors"];
@@ -91,20 +91,32 @@ function reset() {
   playerScore = 0;
   computerScore = 0;
 }
+
 function start() {
   console.clear();
   console.log("Welcome to the game of Rock, Paper, Scissors! \n" + "Let's see if you can defeat the computer!\n\n");
-  let gameInit = prompt("Type your input!");
-  input = gameInit.toLowerCase();
+  let gameInit = prompt("Type any of the inputs from ROCK / PAPER / SCISSORS");
 
-  if (gameInit && (input == "rock" || input == "paper" || input == "scissors")) {
-    // if (input == "rock" || input == "paper" || input == "scissors") {
-    reset();
-    game();
-  } else {
-    alert("Type any of the inputs from ROCK / PAPER / SCISSORS");
+  if (gameInit) {
+    // Some value entered in prompt box
+    input = gameInit.toLowerCase();
+    if (input == "rock" || input == "paper" || input == "scissors") {
+      reset();
+      game();
+    } else {
+      alert("You can type only ROCK / PAPER / SCISSORS");
+      start();
+    }
+  } else if (gameInit === "") {
+    // No value entered in prompt box & hit OK
+    alert("You didn't type anything!");
     start();
+  } else if (gameInit === null) {
+    // Cancel button hit in prompt box
+    console.log("Game Cancelled!");
+    alert("You cancelled the game!");
   }
 }
+
 //Program starts from here//
 start();
