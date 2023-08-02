@@ -62,17 +62,17 @@ function game() {
     console.log("Your score:" + playerScore);
     console.log("Computer score:" + computerScore);
   }
-  console.log("\n\n YOUR TOTAL SCORE : " + playerScore+" POINTS");
+  console.log("\n\nYOUR TOTAL SCORE : " + playerScore+" POINTS");
   console.log("COMPUTER'S TOTAL SCORE: " + computerScore+" POINTS");
 
   if (playerScore > computerScore) {
     let scoreDifference = playerScore - computerScore;
-    console.log("FINAL RESULT:            YOU WON BY " + scoreDifference + " POINTS!!");
+    console.log("FINAL RESULT:   YOU WON BY " + scoreDifference + " POINTS!!");
   } else if (computerScore > playerScore) {
     let scoreDifference = computerScore - playerScore;
-    console.log("FINAL RESULT:            YOU LOST BY " + scoreDifference + " POINTS!!");
+    console.log("FINAL RESULT:   YOU LOST BY " + scoreDifference + " POINTS!!");
   } else {
-    console.log("FINAL RESULT:            It's a TIE!!");
+    console.log("FINAL RESULT:   It's a TIE!!");
   }
   confirmAction();
 }
