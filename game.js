@@ -84,6 +84,7 @@ function confirmAction() {
     start();
   } else {
     console.log("\n\nGame Cancelled!");
+    alert("You cancelled the game!");
   }
 }
 
