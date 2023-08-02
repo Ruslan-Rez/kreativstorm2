@@ -91,6 +91,8 @@ function reset() {
   computerScore = 0;
 }
 function start() {
+  console.clear();
+  console.log("Welcome to the game of Rock, Paper, Scissors! " + "Let's see if you can defeat the computer!");
   let gameInit = prompt("Type your input!");
   reset();
   if (gameInit) {
@@ -104,5 +106,4 @@ function start() {
   }
 }
 //Program starts from here//
-console.log("Welcome to the game of Rock, Paper, Scissors! " + "Let's see if you can defeat the computer!");
 start();
