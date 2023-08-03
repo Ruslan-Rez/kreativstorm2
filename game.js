@@ -65,7 +65,7 @@ function game() {
     console.log("Your score:" + playerScore + "               |               " + "Computer score:" + computerScore);
   }
 
-  console.log("\n\n\n!!    FINAL RESULTS    !!");
+  console.log("\n\n\nFINAL RESULTS!!!");
   console.log("YOUR TOTAL SCORE :   " + playerScore + " POINTS\nCOMPUTER'S TOTAL SCORE : " + computerScore + " POINTS");
 
   if (playerScore > computerScore) {
@@ -102,7 +102,7 @@ function start() {
 
   if (gameInit) {
     // Some value entered in prompt box
-    input = gameInit.toLowerCase();
+    input = gameInit.trim().toLowerCase(); // trimming any white spaces if any & converting to lowercase
     if (input == "rock" || input == "paper" || input == "scissors") {
       // Checking whether the value entered is either 'rock/paper/scissors'
       reset(); //reset the computer score & player score
