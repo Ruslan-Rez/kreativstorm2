@@ -103,8 +103,7 @@ function confirmAction() {
     reset();
     start();
   } else {
-    console.log("\n\nGame Cancelled!");
-    alert("You cancelled the game!");
+    console.log("\n\nYou cancelled the game!"); 
   }
 }
 
