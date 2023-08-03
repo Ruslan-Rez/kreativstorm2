@@ -1,7 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 let scoreDifference;
-let input;
+//let input;
 
 function computerPlay() {
   const choices = ["rock", "paper", "scissors"];
@@ -61,8 +61,17 @@ function game() {
   for (let i = 0; i < 5; i++) {
     let j = i + 1;
     console.log("\nRound " + j);
-    console.log(playRound(input, computerPlay()));
-    console.log("Your score:" + playerScore + "               |               " + "Computer score:" + computerScore);
+    let input = prompt("Type any of the inputs from ROCK / PAPER / SCISSORS");
+    input = input.trim().toLowerCase();
+    if (input == "rock" || input == "paper" || input == "scissors") {
+      // Checking whether the value entered is either 'rock/paper/scissors'
+      console.log(playRound(input, computerPlay()));
+      console.log("Your score:" + playerScore + "               |               " + "Computer score:" + computerScore);
+    } else {
+      alert("Invalid Input!  You can type only ROCK / PAPER / SCISSORS");
+      i = i-1;
+    }
+
   }
 
   console.log("\n\n\nFINAL RESULTS!!!");
@@ -80,46 +89,26 @@ function game() {
   confirmAction();
 }
 
+function reset() {
+  playerScore = 0;
+  computerScore = 0;
+}
 function confirmAction() {
-  let text = "Do you want to play another round?";
+  let text = "Do you want to play again?";
   if (confirm(text) == true) {
+    reset();
     start();
+
   } else {
     console.log("\n\nGame Cancelled!");
     alert("You cancelled the game!");
   }
 }
 
-function reset() {
-  playerScore = 0;
-  computerScore = 0;
-}
-
 function start() {
   console.clear();
   console.log("Welcome to the game of Rock, Paper, Scissors! \n" + "Let's see if you can defeat the computer!\n\n");
-  let gameInit = prompt("Type any of the inputs from ROCK / PAPER / SCISSORS");
-
-  if (gameInit) {
-    // Some value entered in prompt box
-    input = gameInit.trim().toLowerCase(); // trimming white spaces & converting to lower case. 
-    if (input == "rock" || input == "paper" || input == "scissors") {
-      // Checking whether the value entered is either 'rock/paper/scissors'
-      reset(); //reset the computer score & player score
-      game(); // STARTS THE GAME AFTER PASSING THE INITIAL CHECKS
-    } else {
-      alert("Invalid Input!  You can type only ROCK / PAPER / SCISSORS");
-      start();
-    }
-  } else if (gameInit === "") {
-    // No value entered in prompt box & hit OK
-    alert("You didn't type anything!");
-    start();
-  } else if (gameInit === null) {
-    // Cancel button hit in the prompt box
-    console.log("Game Cancelled!");
-    alert("You cancelled the game!");
-  }
+  game();
 }
 
 //Program starts from here//
