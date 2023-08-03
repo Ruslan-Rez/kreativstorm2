@@ -2,6 +2,7 @@ let playerScore = 0;
 let computerScore = 0;
 let scoreDifference;
 let input;
+let round;
 const choices = ["rock", "paper", "scissors"];
 function computerPlay() {
   let randomChoice = Math.floor(Math.random() * 3);
@@ -58,8 +59,8 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    let j = i + 1;
-    console.log("\nRound " + j);
+    round = i + 1;
+    console.log("\nRound " + round);
     input = prompt("Type any of the inputs from ROCK / PAPER / SCISSORS");
     let playersChoice;
     if (input !== null) {
@@ -74,21 +75,22 @@ function game() {
       }
     } else {
       i = 5;
-      console.log("\n\nYou quit the game before finishing all the rounds!");
+      console.log("\n\nYOU QUIT THE GAME BEFORE FINISHING ALL THE ROUNDS!");
     }
   }
+  if (round > 1) {
+    console.log("\n\n\nFINAL RESULTS!!!");
+    console.log("YOUR TOTAL SCORE :   " + playerScore + " POINTS\nCOMPUTER'S TOTAL SCORE : " + computerScore + " POINTS");
 
-  console.log("\n\n\nFINAL RESULTS!!!");
-  console.log("YOUR TOTAL SCORE :   " + playerScore + " POINTS\nCOMPUTER'S TOTAL SCORE : " + computerScore + " POINTS");
-
-  if (playerScore > computerScore) {
-    scoreDifference = playerScore - computerScore;
-    console.log("YOU WON BY " + scoreDifference + " POINTS!!");
-  } else if (computerScore > playerScore) {
-    scoreDifference = computerScore - playerScore;
-    console.log("YOU LOST BY " + scoreDifference + " POINTS!!");
-  } else {
-    console.log("It's a TIE!!");
+    if (playerScore > computerScore) {
+      scoreDifference = playerScore - computerScore;
+      console.log("YOU WON BY " + scoreDifference + " POINTS!!");
+    } else if (computerScore > playerScore) {
+      scoreDifference = computerScore - playerScore;
+      console.log("YOU LOST BY " + scoreDifference + " POINTS!!");
+    } else {
+      console.log("It's a TIE!!");
+    }
   }
   confirmAction();
 }
@@ -103,7 +105,7 @@ function confirmAction() {
     reset();
     start();
   } else {
-    console.log("\n\nYou cancelled the game!"); 
+    console.log("\n\nYou cancelled the game!");
   }
 }
 
