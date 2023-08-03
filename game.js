@@ -65,8 +65,8 @@ function game() {
     console.log("Your score:" + playerScore + "               |               " + "Computer score:" + computerScore);
   }
 
-  console.log("\n\n\nFINAL RESULTS!!");
-  console.log("YOUR SCORE :   " + playerScore + " POINTS\nCOMPUTER SCORE : " + computerScore + " POINTS");
+  console.log("\n\n\n!!    FINAL RESULTS    !!");
+  console.log("YOUR TOTAL SCORE :   " + playerScore + " POINTS\nCOMPUTER'S TOTAL SCORE : " + computerScore + " POINTS");
 
   if (playerScore > computerScore) {
     scoreDifference = playerScore - computerScore;
