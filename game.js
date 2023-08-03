@@ -1,10 +1,9 @@
 let playerScore = 0;
 let computerScore = 0;
 let scoreDifference;
-//let input;
-
+let input;
+const choices = ["rock", "paper", "scissors"];
 function computerPlay() {
-  const choices = ["rock", "paper", "scissors"];
   let randomChoice = Math.floor(Math.random() * 3);
   let computerChoice = choices[randomChoice];
   return computerChoice;
@@ -61,17 +60,21 @@ function game() {
   for (let i = 0; i < 5; i++) {
     let j = i + 1;
     console.log("\nRound " + j);
-    let input = prompt("Type any of the inputs from ROCK / PAPER / SCISSORS");
-    input = input.trim().toLowerCase();
-    if (input == "rock" || input == "paper" || input == "scissors") {
-      // Checking whether the value entered is either 'rock/paper/scissors'
-      console.log(playRound(input, computerPlay()));
-      console.log("Your score:" + playerScore + "               |               " + "Computer score:" + computerScore);
+    input = prompt("Type any of the inputs from ROCK / PAPER / SCISSORS");
+    let playersChoice;
+    if (input !== null){
+      playersChoice = input.trim().toLowerCase();
+      if (choices.includes(playersChoice)) {
+        // Checking whether the value entered is either 'rock/paper/scissors'
+        console.log(playRound(playersChoice, computerPlay()));
+        console.log("Your score:" + playerScore + "               |               " + "Computer score:" + computerScore);
+      } else {
+        alert("Invalid Input!  You can type only ROCK / PAPER / SCISSORS");
+        i = i-1;
+      }
     } else {
-      alert("Invalid Input!  You can type only ROCK / PAPER / SCISSORS");
-      i = i-1;
+      i = 5;
     }
-
   }
 
   console.log("\n\n\nFINAL RESULTS!!!");
