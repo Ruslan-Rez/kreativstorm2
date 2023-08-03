@@ -102,13 +102,13 @@ function start() {
 
   if (gameInit) {
     // Some value entered in prompt box
-    input = gameInit.trim().toLowerCase();  
+    input = gameInit.trim().toLowerCase();
     if (input == "rock" || input == "paper" || input == "scissors") {
       // Checking whether the value entered is either 'rock/paper/scissors'
       reset(); //reset the computer score & player score
       game(); // STARTS THE GAME AFTER PASSING THE INITIAL CHECKS
     } else {
-      alert("You can type only ROCK / PAPER / SCISSORS");
+      alert("Invalid Input!  You can type only ROCK / PAPER / SCISSORS");
       start();
     }
   } else if (gameInit === "") {
