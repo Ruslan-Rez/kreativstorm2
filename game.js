@@ -74,7 +74,7 @@ function game() {
       }
     } else {
       i = 5;
-      console.log("\n\nYOU QUIT THE GAME BEFORE FINISHING ALL THE ROUNDS");
+      console.log("\n\nYou quit the game before finishing all the rounds!");
     }
   }
 
