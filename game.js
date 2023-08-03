@@ -62,7 +62,7 @@ function game() {
     console.log("\nRound " + j);
     input = prompt("Type any of the inputs from ROCK / PAPER / SCISSORS");
     let playersChoice;
-    if (input !== null){
+    if (input !== null) {
       playersChoice = input.trim().toLowerCase();
       if (choices.includes(playersChoice)) {
         // Checking whether the value entered is either 'rock/paper/scissors'
@@ -70,10 +70,11 @@ function game() {
         console.log("Your score:" + playerScore + "               |               " + "Computer score:" + computerScore);
       } else {
         alert("Invalid Input!  You can type only ROCK / PAPER / SCISSORS");
-        i = i-1;
+        i = i - 1;
       }
     } else {
       i = 5;
+      console.log("\n\nGame quit before finishing all the rounds");
     }
   }
 
@@ -101,7 +102,6 @@ function confirmAction() {
   if (confirm(text) == true) {
     reset();
     start();
-
   } else {
     console.log("\n\nGame Cancelled!");
     alert("You cancelled the game!");
