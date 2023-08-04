@@ -77,7 +77,7 @@ function game() {
         // Checking whether the value entered is either 'rock/paper/scissors'
         console.log(playRound(playersChoice, computerPlay()));
         console.log("Your score:" + playerScore +
-          "             |             " + "Computer score:" +
+          "          |          " + "Computer score:" +
           computerScore);
       } else {
         alert(
