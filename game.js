@@ -77,7 +77,7 @@ function game() {
         // Checking whether the value entered is either 'rock/paper/scissors'
         console.log(playRound(playersChoice, computerPlay()));
         console.log("Your score:" + playerScore +
-          "               |               " + "Computer score:" +
+          "             |             " + "Computer score:" +
           computerScore);
       } else {
         alert(
@@ -129,7 +129,7 @@ function confirmAction() {
 function start() {
   console.clear();
   alert(
-    `Welcome to the game of Rock, Paper, Scissors! \nLet's see if you can defeat the computer!
+    `\nWelcome to the game of Rock, Paper, Scissors! \nLet's see if you can defeat the computer!
   \n-Please open your console before you continue-\n\n
 To defeat the computer you will need to throw either:\n  'ROCK',  'PAPER' or 'SCISSORS' `
     );
