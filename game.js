@@ -133,7 +133,7 @@ function start() {
   \n- Please open your console before you continue -\n\n
 To defeat the computer you will need to throw either:\n  'ROCK',  'PAPER' or 'SCISSORS' `
     );
-  alert(`Good Luck`);
+  alert(`Good Luck!`);
   game();
 }
 //Program starts from here//
