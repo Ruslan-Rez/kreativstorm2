@@ -130,8 +130,8 @@ function start() {
   console.clear();
   alert(
     `Welcome to the game of Rock, Paper, Scissors! \nLet's see if you can defeat the computer!
-  *PLease open your console before you continue*
-  To defeat the computer you will need to throw:\n'Rock'\n'Paper' or\n'Scissors' `
+  -Please open your console before you continue-\n\n
+  To defeat the computer you will need to throw either:'Rock' or 'Paper' or'Scissors' `
     );
   alert(`Good Luck`);
   game();
