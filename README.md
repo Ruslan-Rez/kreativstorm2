@@ -1,5 +1,5 @@
 
 #  Rock - Paper - Scissors!! 
-# [Visit the website here](https://ashish-augustine.github.io/kreativstorm2/)
+# [Click here to play the game!](https://ashish-augustine.github.io/kreativstorm2/)
 
 
