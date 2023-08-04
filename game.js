@@ -91,7 +91,7 @@ function game() {
   if (round > 1) {
     let finalScore = scoreCard();
     alert(`\nFINAL RESULTS!!!\n
-      ${finalScore}
+      ${finalScore}\n
       YOUR TOTAL SCORE :${playerScore} POINTS
       COMPUTER'S TOTAL SCORE :${computerScore} POINTS`);
     scoreCard();
