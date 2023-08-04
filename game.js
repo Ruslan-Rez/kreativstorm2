@@ -4,6 +4,7 @@ let scoreDifference;
 let input;
 let round;
 const choices = ["rock", "paper", "scissors"];
+
 function computerPlay() {
   let randomChoice = Math.floor(Math.random() * 3);
   let computerChoice = choices[randomChoice];
@@ -12,46 +13,53 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
   let message;
-
   switch (playerSelection) {
     case "rock":
       if (computerSelection == "rock") {
-        message = "Your Selection: Rock\nComputer Selection: Rock\n" + "Result:It's a tie! Both gave Rock";
+        message = "Your Selection: Rock\nComputer Selection: Rock\n" +
+          "Result:It's a tie! Both played Rock";
         return message;
       } else if (computerSelection == "paper") {
-        message = "Your Selection: Rock\nComputer Selection: Paper\n" + "Result:You lose! Paper beats rock";
+        message = "Your Selection: Rock\nComputer Selection: Paper\n" +
+          "Result:You lose! Paper beats rock";
         computerScore += 1;
         return message;
       } else {
-        message = "Your Selection: Rock\nComputer Selection: Scissors\n" + "Result:You win! Rock beats scissors";
+        message = "Your Selection: Rock\nComputer Selection: Scissors\n" +
+          "Result:You win! Rock beats scissors";
         playerScore += 1;
         return message;
       }
     case "paper":
       if (computerSelection == "rock") {
         playerScore += 1;
-        message = "Your Selection: Paper\nComputer Selection: Rock\n" + "Result:You won! Paper beats Rock";
+        message = "Your Selection: Paper\nComputer Selection: Rock\n" +
+          "Result:You won! Paper beats Rock";
         return message;
       } else if (computerSelection == "paper") {
-        message = "Your Selection: Paper\nComputer Selection: Paper\n" + "Result:It's a tie! Both gave paper";
+        message = "Your Selection: Paper\nComputer Selection: Paper\n" +
+          "Result:It's a tie! Both played paper";
         return message;
       } else {
-        message = "Your Selection: Paper\nComputer Selection: Scissors\n" + "Result:You lose! Scissors beats paper";
+        message = "Your Selection: Paper\nComputer Selection: Scissors\n" +
+          "Result:You lose! Scissors beats paper";
         computerScore += 1;
         return message;
       }
-
     case "scissors":
       if (computerSelection == "rock") {
         computerScore += 1;
-        message = "Your Selection: Scissors\nComputer Selection: Rock\n" + "Result:You lose! Rock beats scissors";
+        message = "Your Selection: Scissors\nComputer Selection: Rock\n" +
+          "Result:You lose! Rock beats scissors";
         return message;
       } else if (computerSelection == "paper") {
         playerScore += 1;
-        message = "Your Selection: Scissors\nComputer Selection: Paper\n" + "Result:You Won! Scissors beats paper";
+        message = "Your Selection: Scissors\nComputer Selection: Paper\n" +
+          "Result:You Won! Scissors beats paper";
         return message;
       } else {
-        message = "Your Selection: Scissors\nComputer Selection: Scissors\n" + "Result:It's a tie! Both gave Scissors";
+        message = "Your Selection: Scissors\nComputer Selection: Scissors\n" +
+          "Result:It's a tie! Both played Scissors";
         return message;
       }
   }
@@ -61,16 +69,19 @@ function game() {
   for (let i = 0; i < 5; i++) {
     round = i + 1;
     console.log("\nRound " + round);
-    input = prompt("Type any of the inputs from ROCK / PAPER / SCISSORS");
+    input = prompt("Your turn. Play either:  'ROCK', 'PAPER', or 'SCISSORS'");
     let playersChoice;
     if (input !== null) {
       playersChoice = input.trim().toLowerCase();
       if (choices.includes(playersChoice)) {
         // Checking whether the value entered is either 'rock/paper/scissors'
         console.log(playRound(playersChoice, computerPlay()));
-        console.log("Your score:" + playerScore + "               |               " + "Computer score:" + computerScore);
+        console.log("Your score:" + playerScore +
+          "               |               " + "Computer score:" +
+          computerScore);
       } else {
-        alert("Invalid Input!  You can type only ROCK / PAPER / SCISSORS");
+        alert(
+          "Invalid Input!  You can only type 'ROCK',  'PAPER' or 'SCISSORS'");
         i = i - 1;
       }
     } else {
@@ -78,26 +89,33 @@ function game() {
     }
   }
   if (round > 1) {
-    console.log("\n\n\nFINAL RESULTS!!!");
-    console.log("YOUR TOTAL SCORE :   " + playerScore + " POINTS\nCOMPUTER'S TOTAL SCORE : " + computerScore + " POINTS");
-
-    if (playerScore > computerScore) {
-      scoreDifference = playerScore - computerScore;
-      console.log("YOU WON BY " + scoreDifference + " POINTS!!");
-    } else if (computerScore > playerScore) {
-      scoreDifference = computerScore - playerScore;
-      console.log("YOU LOST BY " + scoreDifference + " POINTS!!");
-    } else {
-      console.log("It's a TIE!!");
-    }
+    let finalScore = scoreCard();
+    alert(`FINAL RESULTS!!!
+      ${finalScore}
+      YOUR TOTAL SCORE :${playerScore} POINTS
+      COMPUTER'S TOTAL SCORE :${computerScore} POINTS`);
+    scoreCard();
   }
   confirmAction();
+}
+
+function scoreCard() {
+  if (playerScore > computerScore) {
+    scoreDifference = playerScore - computerScore;
+    return `YOU WON BY ${scoreDifference} POINTS!!`;
+  } else if (computerScore > playerScore) {
+    scoreDifference = computerScore - playerScore;
+    return `YOU LOST BY ${scoreDifference} POINTS!!`;
+  } else {
+    return `It's a TIE!!`;
+  }
 }
 
 function reset() {
   playerScore = 0;
   computerScore = 0;
 }
+
 function confirmAction() {
   let text = "Do you want to play again?";
   if (confirm(text) == true) {
@@ -110,9 +128,13 @@ function confirmAction() {
 
 function start() {
   console.clear();
-  console.log("Welcome to the game of Rock, Paper, Scissors! \n" + "Let's see if you can defeat the computer!\n\n");
+  alert(
+    `Welcome to the game of Rock, Paper, Scissors! \nLet's see if you can defeat the computer!
+  *PLease open your console before you continue*
+  To defeat the computer you will need to throw:\n'Rock'\n'Paper' or\n'Scissors' `
+    );
+  alert(`Good Luck`);
   game();
 }
-
 //Program starts from here//
 start();
