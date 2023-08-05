@@ -64,38 +64,46 @@ function playRound(playerSelection, computerSelection) {
       }
   }
 }
-
+function playerPlay(input,i){
+  let playersChoice;
+  if (input !== null) {
+    playersChoice = input.trim().toLowerCase();
+    if (choices.includes(playersChoice)) {
+      // Checking whether the value entered is either 'rock/paper/scissors'
+      console.log(playRound(playersChoice, computerPlay()));
+      console.log("Your score:" + playerScore +
+          "            |            " + "Computer score:" +
+          computerScore);
+      return true;
+    } else {
+      alert(
+          "Invalid Input!  You can only type 'ROCK',  'PAPER' or 'SCISSORS'");
+      return false;
+    }
+  } else {
+    alert(
+        "You can't quit mid game!Finish 5 rounds!");
+    return false;
+  }
+}
 function game() {
   for (let i = 0; i < 5; i++) {
     round = i + 1;
     console.log("\nRound " + round);
     input = prompt("Your turn. Play either:  'ROCK', 'PAPER', or 'SCISSORS'");
-    let playersChoice;
-    if (input !== null) {
-      playersChoice = input.trim().toLowerCase();
-      if (choices.includes(playersChoice)) {
-        // Checking whether the value entered is either 'rock/paper/scissors'
-        console.log(playRound(playersChoice, computerPlay()));
-        console.log("Your score:" + playerScore +
-          "            |            " + "Computer score:" +
-          computerScore);
-      } else {
-        alert(
-          "Invalid Input!  You can only type 'ROCK',  'PAPER' or 'SCISSORS'");
-        i = i - 1;
-      }
-    } else {
-      i = 5;
+    //playerPlay(input,i)
+    if (!playerPlay(input,i)){
+      i = i-1;
     }
+
   }
-  if (round > 1) {
+
     let finalScore = scoreCard();
     alert(`\nFINAL RESULTS!!!\n
       ${finalScore}\n
       YOUR TOTAL SCORE :${playerScore} POINTS
       COMPUTER'S TOTAL SCORE :${computerScore} POINTS`);
     scoreCard();
-  }
   confirmAction();
 }
 
@@ -130,7 +138,8 @@ function start() {
   console.clear();
   alert(
     `\nWelcome to the game of Rock, Paper, Scissors! \nLet's see if you can defeat the computer!
-  \n- Please open your console before you continue -\n\n
+  \n- Please open your console before you continue -\n( Microsoft Edge: F12 |
+Google Chrome: Ctrl + Shift + J | Mac: Cmd + Option + J )\n
 To defeat the computer you will need to throw either:\n  'ROCK',  'PAPER' or 'SCISSORS' `
     );
   alert(`Good Luck!`);
