@@ -64,7 +64,7 @@ function playRound(playerSelection, computerSelection) {
       }
   }
 }
-function playerPlay(input,i){
+function playerPlay(input){
   let playersChoice;
   if (input !== null) {
     playersChoice = input.trim().toLowerCase();
@@ -92,7 +92,7 @@ function game() {
     console.log("\nRound " + round);
     input = prompt("Your turn. Play either:  'ROCK', 'PAPER', or 'SCISSORS'");
     //playerPlay(input,i)
-    if (!playerPlay(input,i)){
+    if (!playerPlay(input)){
       i = i-1;
     }
 
